@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow — Учёт расходов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2><i class="fas fa-wallet"></i> FinanceFlow</h2>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-home"></i> Дашборд</a>
+                <a href="#"><i class="fas fa-plus-circle"></i> Добавить</a>
+                <a href="#"><i class="fas fa-list"></i> История</a>
+                <a href="#"><i class="fas fa-chart-pie"></i> Аналитика</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Добро пожаловать в FinanceFlow</h1>
+                <div class="balance">
+                    <span>Баланс</span>
+                    <h2 id="balance">0 ₽</h2>
+                </div>
+            </header>
+
+            <!-- Add Transaction -->
+            <section class="add-transaction">
+                <h3>Добавить операцию</h3>
+                <form id="transaction-form">
+                    <input type="text" id="description" placeholder="Описание (например: Ужин в кафе)" required>
+                    <input type="number" id="amount" placeholder="Сумма" step="0.01" required>
+                    <select id="type">
+                        <option value="expense">Расход</option>
+                        <option value="income">Доход</option>
+                    </select>
+                    <select id="category">
+                        <option value="Еда">Еда</option>
+                        <option value="Транспорт">Транспорт</option>
+                        <option value="Развлечения">Развлечения</option>
+                        <option value="Зарплата">Зарплата</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                    <button type="submit">Добавить</button>
+                </form>
+            </section>
+
+            <!-- Summary Cards -->
+            <div class="summary">
+                <div class="card income">
+                    <h4>Доходы</h4>
+                    <p id="total-income">0 ₽</p>
+                </div>
+                <div class="card expense">
+                    <h4>Расходы</h4>
+                    <p id="total-expense">0 ₽</p>
+                </div>
+            </div>
+
+            <!-- Transactions List -->
+            <section class="transactions">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3>Последние операции</h3>
+                    <button onclick="clearAllData()" style="padding: 8px 16px; background: #ff3366; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                        Очистить всё
+                    </button>
+                </div>
+                <ul id="transaction-list"></ul>
+            </section>
+
+            <!-- Chart -->
+            <section class="chart-section">
+                <h3>Расходы по категориям</h3>
+                <div style="height: 320px; position: relative;">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

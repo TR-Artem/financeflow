@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+    color: #e0e0ff;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: rgba(20, 20, 40, 0.95);
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #334;
+}
+
+.sidebar h2 {
+    color: #00ffaa;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: #00ffaa33;
+    color: #00ffaa;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.balance h2 {
+    font-size: 2.8rem;
+    color: #00ffaa;
+}
+
+.add-transaction {
+    background: rgba(30, 30, 50, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.add-transaction form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 12px;
+}
+
+.add-transaction input, .add-transaction select, .add-transaction button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #252540;
+    color: white;
+}
+
+.add-transaction button {
+    background: #00ffaa;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-transaction button:hover {
+    background: #00cc88;
+    transform: translateY(-2px);
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: rgba(30, 30, 50, 0.9);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border-left: 6px solid;
+}
+
+.income { border-color: #00ffaa; }
+.expense { border-color: #ff3366; }
+
+.transactions ul {
+    list-style: none;
+    background: rgba(30, 30, 50, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.transactions li {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #334;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactions li:last-child { border-bottom: none; }
+
+.positive { color: #00ffaa; }
+.negative { color: #ff3366; }
+
+.chart-section {
+    background: rgba(30, 30, 50, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+}
