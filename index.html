@@ -67,9 +67,14 @@
             <section class="transactions">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                     <h3>Последние операции</h3>
-                    <button onclick="clearAllData()" style="padding: 8px 16px; background: #ff3366; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                        Очистить всё
-                    </button>
+                    <div>
+                        <button onclick="exportToCSV()" style="margin-right: 10px; padding: 8px 16px; background: #00aa88; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            Экспорт в CSV
+                        </button>
+                        <button onclick="clearAllData()" style="padding: 8px 16px; background: #ff3366; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            Очистить всё
+                        </button>
+                    </div>
                 </div>
                 <ul id="transaction-list"></ul>
             </section>
